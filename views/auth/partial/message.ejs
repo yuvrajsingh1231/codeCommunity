@@ -1,0 +1,36 @@
+<% if(typeof errors != 'undefined') { %>
+    <% errors.forEach(e => { %>
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <%= e.msg %>
+        </div>
+    <% }) %>
+<% } %>
+
+<% if(success_msg != '') { %>
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <%= success_msg %>
+    </div>
+<%} %>
+
+<% if(error_msg != '') { %>
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <%= error_msg %>
+    </div>
+<%} %>
+
+<% if(warning_msg != '') { %>
+    <div class="alert alert-warning alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <%= warning_msg %>
+    </div>
+<%} %>
+
+<% if(error != '') { %>
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <%= error %>
+    </div>
+<%} %>
