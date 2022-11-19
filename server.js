@@ -11,7 +11,7 @@ const app = express()
 
 require('./config/passport-config')(passport);
 
-mongoose.connect('mongodb://localhost/blog', {
+mongoose.connect(process.env.DB || 'mongodb://localhost/blog', {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
 
