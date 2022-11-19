@@ -49,7 +49,7 @@ function saveArticleAndRedirect(path) {
 NEW POST🚀🪵
 <b>Title:</b> ${req.body.title}
 <b>Author:</b> ${req.body.authorName}
-<b>Description:</b> ${req.body.description} <a href="http://127.0.0.1:5000/articles/${article.slug}">Read more.</a>`);
+<b>Description:</b> ${req.body.description} <a href="https://codecommunity-06ix.onrender.com/articles/${article.slug}">Read more.</a>`);
       res.redirect(`/articles/${article.slug}`)
     } catch (e) {
       res.render(`articles/${path}`, { article: article, user: req.user})
