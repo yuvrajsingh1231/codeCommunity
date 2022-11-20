@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Blog</title>
-  <style>
-    img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 10rem;
-      height: 10rem;
-    }
-  </style>
-</head>
-<body>
+<%- include('partials/header') %>
   <div class="container">
     <h1 class="mb-1 mt-2 text-center"><%= article.title %></h1>
     <div class="text-muted mb-2 text-right">
@@ -38,13 +20,7 @@
     <div id="article">
       <%- article.sanitizedHtml %>
     </div>
-
-    <script>
-      const article = document.getElementById('article');
-      article.children[0].classList.add('text-center');
-    </script>
   </div>
-</body>
-</html>
+<%- include('partials/footer') %>
 
 

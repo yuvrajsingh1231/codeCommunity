@@ -9,7 +9,7 @@ module.exports = {
     api.setMessageProvider(mp)
     api.start()
     .then(() => {
-        console.log('API is started')
+        // console.log('API is started')
     })
     .catch(console.err)
 

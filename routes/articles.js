@@ -22,19 +22,19 @@ router.get('/:slug', async (req, res) => {
 router.post('/', ensureAuthenticated, async (req, res, next) => {
   req.article = new Article()
   next()
-}, saveArticleAndRedirect('new'))
+}, saveArticleAndRedirect('new', 'NEW POST 🆕🤺'))
 
 router.put('/:id', ensureAuthenticated, async (req, res, next) => {
   req.article = await Article.findById(req.params.id)
   next()
-}, saveArticleAndRedirect('edit'))
+}, saveArticleAndRedirect('edit', 'EDITED 🪶🧑‍💻'))
 
 router.delete('/:id', ensureAuthenticated, async (req, res) => {
   await Article.findByIdAndDelete(req.params.id)
   res.redirect('/')
 })
 
-function saveArticleAndRedirect(path) {
+function saveArticleAndRedirect(path, ext) {
   return async (req, res) => {
     let article = req.article
     article.title = req.body.title
@@ -46,7 +46,7 @@ function saveArticleAndRedirect(path) {
     try {
       article = await article.save()
       sendNotification(`
-NEW POST🚀🪵
+<b>${ext}</b>
 <b>Title:</b> ${req.body.title}
 <b>Author:</b> ${req.body.authorName}
 <b>Description:</b> ${req.body.description} <a href="https://codecommunity-06ix.onrender.com/articles/${article.slug}">Read more.</a>`);
