@@ -54,4 +54,8 @@ app.get('/auth/logout', (req, res) => {
     });
 });
 
+app.get('*', (req, res) => {
+  res.render('articles/404.ejs');
+})
+
 app.listen(process.env.PORT || 5000)

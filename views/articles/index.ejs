@@ -8,7 +8,7 @@
         <a href="/auth/logout" class="btn btn-danger">Logout</a>
       <% } %>
     </div>
-    
+    <div class="scroll" style="height: 100vh; overflow: scroll;">
     <% articles.forEach(article => { %>
       <div class="card mt-4">
         <div class="card-body">
@@ -31,4 +31,6 @@
       </div>
     <% }) %>
   </div>
+  </div>
+
   <%- include('partials/footer') %>
